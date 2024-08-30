@@ -1,7 +1,8 @@
 "use client"
+import { ChildrenProps } from '@/models/ProvideType';
 import React, { useEffect } from 'react'
 
-function ServiceWorkerProvide({ children }: { children: React.ReactNode }) {
+function ServiceWorkerProvide({ children }: ChildrenProps) {
 
   useEffect(() => {
     if ('serviceWorker' in navigator) {
@@ -9,6 +10,8 @@ function ServiceWorkerProvide({ children }: { children: React.ReactNode }) {
         .register('/service-worker.js')
         .then((registration) => console.log('scope is: ', registration.scope));
     }
+    console.log('ok');
+
   }, []);
   return (
     <>

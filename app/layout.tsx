@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ServiceWorkerProvide from "@/components/ServiceWorkerProvide";
+import ServiceWorkerProvide from "@/components/provide/ServiceWorkerProvide";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
+import StoreProvide from "@/components/provide/StoreProvide";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,9 +37,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ServiceWorkerProvide>
-          {children}
-        </ServiceWorkerProvide>
+        <AntdRegistry>
+          <StoreProvide>
+            <ServiceWorkerProvide>
+              {children}
+            </ServiceWorkerProvide>
+          </StoreProvide>
+        </AntdRegistry>
       </body>
     </html>
   );
