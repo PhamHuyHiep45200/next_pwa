@@ -11,7 +11,6 @@ function ServiceWorkerProvide({ children }: ChildrenProps) {
         // eslint-disable-next-line no-console
         .then((registration) => console.log('scope is: ', registration.scope));
     }
-    console.log('ok');
 
   }, []);
   return (
