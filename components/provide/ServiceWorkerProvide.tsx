@@ -8,6 +8,7 @@ function ServiceWorkerProvide({ children }: ChildrenProps) {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
         .register('/service-worker.js')
+        // eslint-disable-next-line no-console
         .then((registration) => console.log('scope is: ', registration.scope));
     }
     console.log('ok');

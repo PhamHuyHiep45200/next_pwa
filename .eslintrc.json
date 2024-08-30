@@ -1,3 +1,13 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "max-len": ["error", {"code": 200, "ignoreUrls": true}],
+    "curly": ["error", "all"],
+    "no-confusing-arrow": ["error", { "allowParens": false }],
+    "no-mixed-operators": "error",
+    "no-tabs": ["error", {"allowIndentationTabs": true}],
+    "no-console": "error",
+    "max-lines": ["error", 250],
+    "no-unused-vars": ["error"]
+  }
 }
